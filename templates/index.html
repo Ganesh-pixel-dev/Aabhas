@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Aabhas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="brand">
+                <div class="mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" width="26" height="26">
+                        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="16" cy="16" r="2.5" fill="currentColor"/>
+                        <line x1="16" y1="1" x2="16" y2="7" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="16" y1="25" x2="16" y2="31" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="1" y1="16" x2="7" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="25" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>AABHAS <span class="brand-code">// P.E.I.S.</span></h1>
+                    <span class="subtitle">Predictive Emergency Intent System</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span>SYSTEM ACTIVE</span>
+                </div>
+                <div class="clock" id="header-clock">--:--:--</div>
+            </div>
+        </header>
+
+        <main class="main-layout">
+            <section class="video-section">
+                <div class="video-frame">
+                    <div class="hud-corner hud-tl"></div>
+                    <div class="hud-corner hud-tr"></div>
+                    <div class="hud-corner hud-bl"></div>
+                    <div class="hud-corner hud-br"></div>
+                    <div class="scan-sweep" aria-hidden="true"></div>
+
+                    <img src="{{ url_for('video_feed') }}" alt="Live camera feed" id="video-feed">
+
+                    <div class="feed-tag feed-tag-tl">
+                        <span class="rec-dot"></span> CAM_01 · LIVE
+                    </div>
+                    <div class="feed-tag feed-tag-tr" id="feed-timestamp">00:00:00</div>
+                    <div class="feed-tag feed-tag-bl">AI TRACKING ENGAGED</div>
+                </div>
+            </section>
+
+            <section class="data-section">
+                <div class="card status-card" id="status-card">
+                    <h3 class="card-title">Current Status</h3>
+                    <h2 id="current-status" class="status-text">Analyzing...</h2>
+                    <div class="confidence-row">
+                        <span class="confidence-label" id="confidence">Confidence: --</span>
+                    </div>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                </div>
+
+                <div class="card telemetry-card">
+                    <h3 class="card-title">Live Telemetry</h3>
+                    <div class="telemetry-grid">
+                        <div class="tel-item">
+                            <span class="tel-label">Targets</span>
+                            <span class="tel-value" id="val-skeletons">0</span>
+                            <div class="tel-bar"><div class="tel-bar-fill" id="bar-skeletons"></div></div>
+                        </div>
+                        <div class="tel-item">
+                            <span class="tel-label">Velocity</span>
+                            <span class="tel-value" id="val-velocity">0.0m/s</span>
+                            <div class="tel-bar"><div class="tel-bar-fill" id="bar-velocity"></div></div>
+                        </div>
+                        <div class="tel-item">
+                            <span class="tel-label">Acceleration</span>
+                            <span class="tel-value" id="val-accel">0.0g</span>
+                            <div class="tel-bar"><div class="tel-bar-fill" id="bar-accel"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card log-card">
+                    <h3 class="card-title">Event Log</h3>
+                    <div class="log-console">
+                        <ul id="alert-list" class="log-list">
+                            <li><span class="log-prefix">&gt;</span><span class="log-time">00:00:00</span> System initialized.</li>
+                        </ul>
+                        <span class="log-cursor" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}?v={{ range(1, 99999) | random }}"></script>
+</body>
+</html>
