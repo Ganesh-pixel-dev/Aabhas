@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aabhas control room</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark">AABHAS</span><span class="sub">Control room</span></div>
+  <div class="top-stats">
+    <span id="stat-cams">Cameras 0</span>
+    <span id="stat-open" class="stat-open">Open alerts 0</span>
+    <button id="sound" class="ghost" aria-pressed="false" title="Play a tone when a new alert arrives">Sound off</button>
+    <time id="clock" class="mono"></time>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden role="alert">
+  <div class="banner-text">
+    <strong id="banner-title"></strong>
+    <span id="banner-sub"></span>
+  </div>
+  <button id="banner-open" class="solid">Open alert</button>
+</div>
+
+<main class="layout">
+  <section class="cams" aria-label="Cameras">
+    <h2 class="h">Cameras</h2>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <aside class="side">
+    <section aria-label="Alert queue">
+      <h2 class="h">Alert queue <span id="queue-count" class="count"></span></h2>
+      <ol id="queue" class="queue"></ol>
+      <p id="queue-empty" class="empty">No open alerts. Nobody has been on the ground longer than the limit.</p>
+    </section>
+    <section aria-label="Watching" id="watch-wrap">
+      <h2 class="h">On the ground now <span class="hint">counting down to an alert</span></h2>
+      <ul id="watch" class="watch"></ul>
+    </section>
+    <section aria-label="Event log" class="log-wrap">
+      <h2 class="h">Event log</h2>
+      <ul id="log" class="log"></ul>
+    </section>
+  </aside>
+</main>
+
+<div id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="d-title">
+  <div class="drawer-in">
+    <button id="d-close" class="ghost close" aria-label="Close">Close</button>
+    <p class="eyebrow" id="d-state"></p>
+    <h2 id="d-title"></h2>
+    <p id="d-loc" class="loc"></p>
+    <dl class="facts">
+      <div><dt>Since fall</dt><dd id="d-since" class="mono big"></dd></div>
+      <div><dt>Camera</dt><dd id="d-cam"></dd></div>
+      <div><dt>Status</dt><dd id="d-status"></dd></div>
+    </dl>
+    <div class="replay">
+      <canvas id="d-canvas" width="640" height="360" aria-label="Skeleton replay"></canvas>
+      <img id="d-raw" alt="Camera footage of this alert" hidden>
+      <div class="replay-bar">
+        <button id="d-play" class="ghost">Pause</button>
+        <input id="d-scrub" type="range" min="0" max="0" value="0" aria-label="Replay position">
+        <span id="d-time" class="mono"></span>
+      </div>
+      <p class="note" id="d-note">Pose lines only. No camera pixels are shown or stored with this record.</p>
+      <button id="d-raw-btn" class="ghost wide">Show camera footage (opening it is logged)</button>
+    </div>
+    <div class="actions">
+      <button id="a-ack" class="solid">Acknowledge</button>
+      <button id="a-dispatch" class="solid hot">Dispatch help</button>
+      <button id="a-false" class="ghost">False alarm</button>
+    </div>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
