@@ -1,3 +1,10 @@
+runtime/
+datasets/
+.venv/
 __pycache__/
 *.pyc
 .env
+.pytest_cache/
+_old/pydeps/
+_old/data/
+_old/downloads/
