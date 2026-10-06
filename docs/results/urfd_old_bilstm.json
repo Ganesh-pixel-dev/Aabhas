@@ -1,0 +1,9 @@
+{
+ "model": "old MediaPipe+BiLSTM (Collapse class)",
+ "falls_detected": 23,
+ "falls_total": 30,
+ "delay_median_s": 0.5,
+ "adl_minutes": 5.0,
+ "false_events": 133,
+ "false_per_hour": 1606.5
+}

@@ -1,0 +1,42 @@
+[
+ {
+  "seed": 0,
+  "falls_detected": 8,
+  "of": 15,
+  "false_events": 9,
+  "adl_minutes": 2.1,
+  "delay_median_s": 0.67
+ },
+ {
+  "seed": 1,
+  "falls_detected": 13,
+  "of": 15,
+  "false_events": 5,
+  "adl_minutes": 2.1,
+  "delay_median_s": 0.93
+ },
+ {
+  "seed": 2,
+  "falls_detected": 12,
+  "of": 15,
+  "false_events": 7,
+  "adl_minutes": 2.1,
+  "delay_median_s": 0.82
+ },
+ {
+  "seed": 3,
+  "falls_detected": 13,
+  "of": 15,
+  "false_events": 15,
+  "adl_minutes": 2.1,
+  "delay_median_s": 0.93
+ },
+ {
+  "seed": 4,
+  "falls_detected": 12,
+  "of": 15,
+  "false_events": 3,
+  "adl_minutes": 2.1,
+  "delay_median_s": 0.82
+ }
+]

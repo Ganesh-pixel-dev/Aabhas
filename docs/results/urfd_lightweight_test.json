@@ -1,0 +1,146 @@
+{
+ "summary": {
+  "mode": "lightweight",
+  "split": "test",
+  "overrides": {},
+  "falls_total": 15,
+  "falls_detected": 4,
+  "delay_median_s": 0.85,
+  "delay_max_s": 1.07,
+  "adl_sequences": 20,
+  "adl_minutes": 2.6,
+  "false_fall_events": 1,
+  "false_down_events": 1,
+  "false_alert_events": 0,
+  "false_fall_per_hour": 23.5,
+  "false_fall_sequences": [
+   [
+    "adl-30",
+    1
+   ]
+  ],
+  "chain_synthetic_alerts": "3/15"
+ },
+ "falls": [
+  {
+   "seq": "fall-02",
+   "detected": true,
+   "delay_s": 0.8,
+   "any_fall_events": 1,
+   "chain_alert_after_hold": true,
+   "video_s": 3.6
+  },
+  {
+   "seq": "fall-04",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 3.1
+  },
+  {
+   "seq": "fall-06",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 3.3
+  },
+  {
+   "seq": "fall-08",
+   "detected": true,
+   "delay_s": 0.73,
+   "any_fall_events": 1,
+   "chain_alert_after_hold": true,
+   "video_s": 3.0
+  },
+  {
+   "seq": "fall-10",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 4.3
+  },
+  {
+   "seq": "fall-12",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 3.6
+  },
+  {
+   "seq": "fall-14",
+   "detected": true,
+   "delay_s": 0.9,
+   "any_fall_events": 1,
+   "chain_alert_after_hold": false,
+   "video_s": 2.0
+  },
+  {
+   "seq": "fall-16",
+   "detected": true,
+   "delay_s": 1.07,
+   "any_fall_events": 1,
+   "chain_alert_after_hold": true,
+   "video_s": 1.8
+  },
+  {
+   "seq": "fall-18",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 2.1
+  },
+  {
+   "seq": "fall-20",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 3.6
+  },
+  {
+   "seq": "fall-22",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 1.8
+  },
+  {
+   "seq": "fall-24",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 1.9
+  },
+  {
+   "seq": "fall-26",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 2.0
+  },
+  {
+   "seq": "fall-28",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 2.1
+  },
+  {
+   "seq": "fall-30",
+   "detected": false,
+   "delay_s": null,
+   "any_fall_events": 0,
+   "chain_alert_after_hold": false,
+   "video_s": 2.3
+  }
+ ]
+}
