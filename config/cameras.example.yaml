@@ -1,0 +1,31 @@
+# Copy to config/cameras.yaml and run:  python run.py --config config/cameras.yaml
+# Every number below is a starting point. Tune them on footage from the actual camera.
+
+settings:
+  pose_mode: balanced        # lightweight | balanced | performance (slower, better for small people)
+  process_fps: 8             # pose runs at most this often per camera
+  data_dir: runtime          # events, skeletons and raw clips of alerts go here
+  clip_retention_hours: 72   # raw clips of alerted events are deleted after this
+  host: 127.0.0.1            # set AABHAS_TOKEN if you change this
+  port: 5000
+
+# Thresholds shared by all cameras. See aabhas/config.py for what each one means.
+thresholds:
+  down_seconds: 30
+  escalate_after_s: 180
+
+cameras:
+  - id: cam1
+    name: Camera 1
+    location: Station Road subway
+    source: rtsp://user:password@192.168.1.20:554/stream1    # RTSP URL
+  - id: cam2
+    name: Camera 2
+    location: Campus gate
+    source: 0                                                # webcam index
+    thresholds: { drop_frac: 0.25 }                          # per camera override
+  - id: cam3
+    name: Camera 3
+    location: Test footage
+    source: datasets/my_clips/test1.mp4                      # a video file standing in for a camera
+    loop: true

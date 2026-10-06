@@ -1,0 +1,34 @@
+# Used by demo.py. Short timers so the whole flow fits in about a minute.
+settings:
+  pose_mode: lightweight
+  process_fps: 8
+  data_dir: runtime/demo-data
+  replay_seconds: 25
+
+thresholds:
+  down_seconds: 15
+  escalate_after_s: 45
+
+cameras:
+  - id: cam1
+    name: Camera 1
+    location: Station Road subway (demo)
+    source: runtime/demo/fall.mp4
+  - id: cam2
+    name: Camera 2
+    location: Campus gate (demo)
+    source: datasets/urfd/adl/adl-03.mp4
+    crop: [320, 0, 320, 240]
+    loop: true
+  - id: cam3
+    name: Camera 3
+    location: Bus stop 14 (demo)
+    source: datasets/urfd/adl/adl-08.mp4
+    crop: [320, 0, 320, 240]
+    loop: true
+  - id: cam4
+    name: Camera 4
+    location: Market lane (demo)
+    source: datasets/urfd/adl/adl-12.mp4
+    crop: [320, 0, 320, 240]
+    loop: true
